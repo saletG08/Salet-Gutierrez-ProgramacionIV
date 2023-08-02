@@ -1,4 +1,4 @@
-package Practica1;
+package Practica004;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -23,7 +23,7 @@ public class Node<T extends Comparable<T>> {
         return keys[index];
     }
 
-    public int indexOf(T value) {
+    public int findKeyIndex(T value) {
         for (int i = 0; i < keysSize; i++) {
             if (keys[i].equals(value)) {
                 return i;
@@ -37,7 +37,7 @@ public class Node<T extends Comparable<T>> {
         Arrays.sort(keys, 0, keysSize);
     }
 
-    public T removeKey(T value) {
+    public T removeAndShiftChildren(T value) {
         T removed = null;
         boolean found = false;
         if (keysSize == 0) {
@@ -117,7 +117,7 @@ public class Node<T extends Comparable<T>> {
         return found;
     }
 
-    public Node<T> removeChild(int index) {
+    public Node<T> removeAndShiftChildren(int index) {
         if (index >= childrenSize) {
             return null;
         }
