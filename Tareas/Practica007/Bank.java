@@ -14,6 +14,14 @@ public class Bank {
         return ticketQueue.add(new Ticket(arriveNumber, isPriority));
     }
 
+    public void remove(){
+        ticketQueue.poll();
+    }
+
+    public int sizeQueue(){
+        return ticketQueue.size();
+    }
+
     public void print(){
         while (!ticketQueue.isEmpty()) {
             Ticket nextTicket = ticketQueue.poll();
