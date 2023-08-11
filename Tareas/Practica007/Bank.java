@@ -11,7 +11,10 @@ public class Bank {
     }
 
     public boolean insert(int arriveNumber, TypePriority isPriority){
-        return ticketQueue.add(new Ticket(arriveNumber, isPriority));
+        for (int i = 0; i < ticketQueue.size(); i++) {
+            return ticketQueue.add(new Ticket(i, isPriority));
+        }
+        return true;
     }
 
     public void remove(){
